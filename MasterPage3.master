@@ -1,0 +1,255 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage3.master.cs" Inherits="MasterPage3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+     <meta charset="UTF-8" />
+        <link href="ccs1/layout.css" rel="stylesheet" />
+<link href="ccs1/reset.css" rel="stylesheet" />
+<link href="ccs1/style.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>  
+<script type="text/javascript" src="js/Forum_400.font.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/tms-0.3.js"></script>
+<script type="text/javascript" src="js/tms_presets.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/atooltip.jquery.js"></script> 
+
+ 
+    <link href="css/style8.css" rel="stylesheet" />
+
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+ <body>
+    <form id="form1" runat="server">
+
+          <div id="cabecera">
+
+      <span class="titulo">Administración de Usuarios</span>
+
+
+      <span class="ruta">
+            <asp:Label ID="Label1" runat="server" Text="BIENVENIDO: " Font-Size="Small"></asp:Label><asp:LoginName ID="LoginName1" runat="server" Font-Size="Small" />
+            <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Size="Small" LogoutAction="RedirectToLoginPage" /><br />   
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+            </asp:SiteMapPath>
+
+      </span>
+              <br />      
+    </div>
+           <div class="body1">
+         
+        <asp:Menu Visible="false" ID="Menu1"  runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="#990000" StaticSubMenuIndent="10px" Orientation="Horizontal" RenderingMode="List" BorderStyle="Inset" ItemWrap="True">
+
+
+                    <DynamicHoverStyle BackColor="#990000" ForeColor="White" BorderColor="#663300" BorderStyle="Inset" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px"  BackColor="#E3D6F0" BorderStyle="Inset" />
+                    <DynamicMenuStyle BackColor="#FFFBD6"  BorderStyle="Inset" />
+                    <DynamicSelectedStyle BackColor="#FFCC66" BorderStyle="Inset"  />
+
+                    
+                    <Items >   
+                                               
+                         <asp:MenuItem  Text="INICIO" Value="Nuevo elemento"   NavigateUrl="~/Default2.aspx"></asp:MenuItem>
+                         <asp:MenuItem Text="USUARIOS"  Value="Nuevo elemento">
+                             <asp:MenuItem Text="VISUALIZAR" NavigateUrl="~/Usuarios/Visualiza.aspx"  Value="VISUALIZAR"></asp:MenuItem>
+                             <asp:MenuItem Text="CREAR USUARIO" NavigateUrl="~/Usuarios/CrearUsuario.aspx" Value="CREAR USUARIO"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR USUARIO" NavigateUrl="~/Usuarios/EliminarUsuario.aspx" Value="ELIMINAR USUARIO"></asp:MenuItem>
+                         </asp:MenuItem>
+                         <asp:MenuItem Text="ROLES" Value="Nuevo elemento">
+                             <asp:MenuItem Text="CREAR ROL" Value="CREAR ROL" NavigateUrl="~/Roles/CrearRol.aspx"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR ROL"  Value="ELIMINAR ROL" NavigateUrl="~/Roles/EliminarRol.aspx"></asp:MenuItem>
+                             <asp:MenuItem Text="ASIGNAR ROL A USUARIO" NavigateUrl="~/Roles/AsignarRol.aspx" Value="ASIGNAR ROL A USUARIO"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR ROL A USUARIO" Value="ELIMINAR ROL A USUARIO" NavigateUrl="~/Roles/RemoverRolUsuario.aspx"></asp:MenuItem>
+                         </asp:MenuItem>
+                         <asp:MenuItem Text="CLIENTES" Value="Nuevo elemento">
+                             <asp:MenuItem Text="CONSULTAR CLIENTE" NavigateUrl="~/Clientes/DataSet.aspx" Value="CONSULTAR CLIENTE"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR CLIENTE" Value="ELIMINAR CLIENTE" NavigateUrl="~/Clientes/Eliminar.aspx" ></asp:MenuItem>
+                         </asp:MenuItem>
+
+                        <asp:MenuItem Text="REGISTRAR MAESTRO" NavigateUrl="~/Usuarios/InsertarMestro.aspx"  Value="Nuevo elemento">
+                         </asp:MenuItem>
+              
+                         </Items>
+
+                    <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#FFCC66" />
+
+                </asp:Menu>
+
+                <asp:Menu Visible="false" ID="Menu2" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="#990000" StaticSubMenuIndent="10px" Orientation="Horizontal" RenderingMode="List">
+
+
+                    <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#FFFBD6" />
+                    <DynamicSelectedStyle BackColor="#FFCC66" />
+
+                    
+                    <Items>   
+                                               
+                         <asp:MenuItem Text="INICIO" Value="Nuevo elemento" NavigateUrl="~/Default2.aspx"  ></asp:MenuItem>
+                         <asp:MenuItem Text="REPORTES" Value="Nuevo elemento" ></asp:MenuItem>
+                         <asp:MenuItem Text="REGISTRAR CLIENTE" Value="Nuevo elemento" NavigateUrl="~/Clientes/Insertar.aspx" ></asp:MenuItem>
+                         <asp:MenuItem Text="MANDAR_CORREO" Value="Nuevo elemento" NavigateUrl="~/Clientes/Busqueda.aspx"></asp:MenuItem>
+                         <asp:MenuItem Text="ASIGNAR_MATERIA" NavigateUrl="~/Usuarios/AsignacionMaterias.aspx" Value="Nuevo elemento"></asp:MenuItem>
+               
+                         </Items>
+
+                    <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#FFCC66" />
+
+                </asp:Menu>
+
+        
+
+           <asp:Menu Visible="false" ID="Menu3" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="#990000" StaticSubMenuIndent="10px" Orientation="Horizontal" RenderingMode="List">
+
+
+                    <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#FFFBD6" />
+                    <DynamicSelectedStyle BackColor="#FFCC66" />
+
+                    
+                    <Items>   
+                                               
+                         <asp:MenuItem Text="INICIO" Value="Nuevo elemento" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                         <asp:MenuItem Text="USUARIOS" Value="Nuevo elemento">
+                             <asp:MenuItem Text="VISUALIZAR" NavigateUrl="~/Usuarios/Visualiza.aspx" Value="VISUALIZAR"></asp:MenuItem>
+                             <asp:MenuItem Text="CREAR USUARIO" Value="CREAR USUARIO"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR USUARIO" Value="ELIMINAR USUARIO"></asp:MenuItem>
+                         </asp:MenuItem>
+                         <asp:MenuItem Text="ROLES" Value="Nuevo elemento">
+                             <asp:MenuItem Text="CREAR ROL" NavigateUrl="~/Roles/CrearRol.aspx" Value="CREAR ROL"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR ROL" Value="ELIMINAR ROL"></asp:MenuItem>
+                             <asp:MenuItem Text="ASIGNAR ROL A USUARIO" Value="ASIGNAR ROL A USUARIO"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR ROL A USUARIO" Value="ELIMINAR ROL A USUARIO"></asp:MenuItem>
+                         </asp:MenuItem>
+                         <asp:MenuItem Text="CLIENTES" Value="Nuevo elemento">
+                             <asp:MenuItem Text="CONSULTAR CLIENTE" Value="CONSULTAR CLIENTE"></asp:MenuItem>
+                             <asp:MenuItem Text="ELIMINAR CLIENTE" Value="ELIMINAR CLIENTE"></asp:MenuItem>
+                         </asp:MenuItem>
+              
+                         </Items>
+
+                    <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#FFCC66" />
+
+            </asp:Menu>
+   
+        <%-- <div class="container">
+            
+            <div class="content">
+                <ul class="ca-menu">
+                    <li>
+                       <a href="../Clientes/Default.aspx">
+                        
+                            <span class="ca-icon">R</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">INICIO</h2>
+                                <h3 class="ca-sub">Persona needs</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ca-icon">S</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">REPORTES</h2>
+                                <h3 class="ca-sub">&nbsp;technology</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="../Clientes/Insertar.aspx">
+               
+                            <span class="ca-icon" id="heart">U</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">REGISTRAR CLIENTE</h2>
+                                <h3 class="ca-sub">Agregar</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Clientes/Busqueda.aspx">
+                            <span class="ca-icon">F</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">BUSQUEDA DE CLIENTE</h2>
+                                <h3 class="ca-sub">action</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ca-icon">Z</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">TIENDA</h2>
+                                <h3 class="ca-sub">r you needs</h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+             <br />
+             <br />
+             <br />
+             <br />
+        </div>--%>
+
+             
+
+        <div id="contenido">
+       
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+ 
+         
+         </div>
+        </div>
+<div class="body3">
+	<div class="body4">
+		<div class="main">
+<!-- footer -->
+			<footer>
+				<div class="wrapper">
+					<section class="col1 pad_left1">
+						<h3>Contactanos: <span>1-800 123 45 67</span></h3>
+
+					</section>
+					<section class="col2 pad_left1">
+						<h3>DESDE NUETRAS REDES:</h3>
+						<ul id="icons">
+							<li><a href="#" class="normaltip" title="Facebook"><img src="images/icon1.gif" alt=""></a></li>
+							<li><a href="#" class="normaltip" title="Linkedin"><img src="images/icon2.gif" alt=""></a></li>
+							<li><a href="#" class="normaltip" title="Twitter"><img src="images/icon3.gif" alt=""></a></li>
+							<li><a href="#" class="normaltip" title="Delicious"><img src="images/icon4.gif" alt=""></a></li>
+							<li><a href="#" class="normaltip" title="Technorati"><img src="images/icon5.gif" alt=""></a></li>
+						</ul>
+					</section>
+				</div>
+				<!-- {%FOOTER_LINK} -->
+			</footer>
+<!-- / footer -->
+		</div>
+	</div>
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
+
+    
+    </form>
+</body>
+</html>

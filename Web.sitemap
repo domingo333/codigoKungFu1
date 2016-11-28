@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+    <siteMapNode >
+
+        <siteMapNode url="~/Usuarios/Default.aspx" title="Usuarios" description=""   >
+          <siteMapNode url="~/Usuarios/Visualiza.aspx" title="Visualizar"  description="" />
+          <siteMapNode url="~/Usuarios/CrearUsuario.aspx" title="Crear Usuario"  description="" />
+          <siteMapNode url="~/Usuarios/EliminarUsuario.aspx" title="Eliminar Usuario"  description="" />
+         </siteMapNode>
+
+        <siteMapNode url="~/Roles/Default.aspx" title="Roles" description=""  >
+          <siteMapNode url="~/Roles/CrearRol.aspx" title="Crear Rol"  description="" />
+          <siteMapNode url="~/Roles/Eliminar Rol.aspx" title="Eliminar Rol"  description="" />
+          <siteMapNode url="~/Roles/AsignarRol.aspx" title="Asignar Rol a Usuario"   description="" />
+          <siteMapNode url="~/Roles/RemoverRolUsuario.aspx" title="Eliminar Rol a Usuario"  description="" />
+          
+          
+         
+        </siteMapNode>
+      
+      <siteMapNode url="Default.aspx" title="clientes" description="" >
+        <siteMapNode url="~/Clientes/DataSet.aspx" title=" Consultar clientes"  description="" />
+        <siteMapNode url="~/Clientes/Eliminar.aspx" title="EliminarCliente"  description="" />
+  
+
+      </siteMapNode>
+      
+    </siteMapNode>
+</siteMap>
